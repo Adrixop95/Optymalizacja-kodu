@@ -1,4 +1,8 @@
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.PrintStream;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Arrays;
 
 
@@ -6,8 +10,10 @@ public class gui_pp extends javax.swing.JFrame {
 
     public gui_pp() {
         initComponents();
-        setResizable(false);
-        setTitle("Projekt - Optymalizacja kodu\"");
+        setResizable(false); //okno bez możliwości zmiany wielkości
+        setTitle("Projekt - Optymalizacja kodu"); //nazwa okna
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize(); //pozyskanie rozdzielczosci ekranu
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2); //otworz okno na środku ekranu
     }
     
     @SuppressWarnings("unchecked")
@@ -30,9 +36,12 @@ public class gui_pp extends javax.swing.JFrame {
         output_pnl_3 = new javax.swing.JTextArea();
         exec_pnl_3 = new javax.swing.JButton();
         clr_pnl_3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        generation_number_p3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         output_pnl_1.setColumns(20);
         output_pnl_1.setRows(5);
@@ -54,13 +63,13 @@ public class gui_pp extends javax.swing.JFrame {
                         .addComponent(exec_pnl_1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clr_pnl_1)
-                        .addGap(0, 439, Short.MAX_VALUE)))
+                        .addGap(0, 599, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panel_1Layout.setVerticalGroup(
             panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_1Layout.createSequentialGroup()
-                .addContainerGap(277, Short.MAX_VALUE)
+                .addContainerGap(447, Short.MAX_VALUE)
                 .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_1)
                     .addComponent(clr_pnl_1))
@@ -86,7 +95,7 @@ public class gui_pp extends javax.swing.JFrame {
             .addGroup(panel_2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
                     .addGroup(panel_2Layout.createSequentialGroup()
                         .addComponent(exec_pnl_2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -97,7 +106,7 @@ public class gui_pp extends javax.swing.JFrame {
         panel_2Layout.setVerticalGroup(
             panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_2Layout.createSequentialGroup()
-                .addContainerGap(277, Short.MAX_VALUE)
+                .addContainerGap(447, Short.MAX_VALUE)
                 .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_2)
                     .addComponent(clr_pnl_2))
@@ -121,6 +130,23 @@ public class gui_pp extends javax.swing.JFrame {
 
         clr_pnl_3.setText("Wyczyść");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Ile liczb chcesz wygenerować?");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Ta część aplikacji porównuje dwa sortowania.");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Wbudowany w funkcję Arrays Quicksort o złożoności O(n^2) oraz Selection Sort o złożoności O(n^2).");
+
+        generation_number_p3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generation_number_p3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_3Layout = new javax.swing.GroupLayout(panel_3);
         panel_3.setLayout(panel_3Layout);
         panel_3Layout.setHorizontalGroup(
@@ -128,27 +154,43 @@ public class gui_pp extends javax.swing.JFrame {
             .addGroup(panel_3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panel_3Layout.createSequentialGroup()
-                        .addComponent(exec_pnl_3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(clr_pnl_3)
+                        .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_3Layout.createSequentialGroup()
+                                .addComponent(exec_pnl_3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clr_pnl_3))
+                            .addGroup(panel_3Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(generation_number_p3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panel_3Layout.setVerticalGroup(
             panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_3Layout.createSequentialGroup()
-                .addContainerGap(277, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(generation_number_p3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_3)
                     .addComponent(clr_pnl_3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Test3", panel_3);
+        jTabbedPane1.addTab("Sortowania", panel_3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,16 +207,39 @@ public class gui_pp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exec_pnl_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exec_pnl_3ActionPerformed
-        java.util.Random r = new java.util.Random();
-        int[] myIntArray = r.ints(0, 10).limit(5).toArray();
         
+        //Wygenerowane tablicy 300 elementowej z randomowymi liczbami z zakresu od -999 do 999
+        //Oraz sklonowanie tablicy do 2 identycznej
+        java.util.Random r = new java.util.Random();
+        int number = Integer.parseInt(generation_number_p3.getText());
+        int[] firstArray = r.ints(-999, 999).limit(number).toArray();
+        int[] seccondArray = firstArray.clone();
+     
+        //Przekierowane outputu na panel 3 (JTextArea Panel 3)
         PrintStream out = new PrintStream (new TextAreaOutputStream(output_pnl_3));
         System.setOut(out);
         System.setErr(out);
-        System.out.println("Przed sortowaniem: " + Arrays.toString(myIntArray));
-        System.out.println("Po sortowaniu: " + Arrays.toString(sortowanie_test.selectionSort(myIntArray)));
-   
+        
+        //Wypisanie tablicy przed sortowaniem
+        System.out.println("\nTablica przed sortowaniem: " + Arrays.toString(firstArray) + "\n");
+        
+        //Sortowanie selection sort, obliczanie czasu
+        Instant start = Instant.now();
+        System.out.println("Sortowanie metoda selection sort (O (n^2)): " + Arrays.toString(sortowanie_test.selectionSort(firstArray)));
+        Instant end = Instant.now();
+        System.out.println(Duration.between(start, end));
+        
+        //Sortowanie wbudowaną funkcją sortowania, obliczanie czasu
+        Instant start2 = Instant.now();
+        Arrays.sort(seccondArray);
+        System.out.println("Sortowanie wbudowana funkcja sortowania Quicksort (O (nlogn)): " + Arrays.toString(seccondArray));
+        Instant end2 = Instant.now();
+        System.out.println(Duration.between(start2, end2));
     }//GEN-LAST:event_exec_pnl_3ActionPerformed
+
+    private void generation_number_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generation_number_p3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generation_number_p3ActionPerformed
 
     public static void main(String args[]) {
 
@@ -210,6 +275,10 @@ public class gui_pp extends javax.swing.JFrame {
     private javax.swing.JButton exec_pnl_1;
     private javax.swing.JButton exec_pnl_2;
     private javax.swing.JButton exec_pnl_3;
+    private javax.swing.JTextField generation_number_p3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
