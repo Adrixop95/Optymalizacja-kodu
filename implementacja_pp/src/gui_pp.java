@@ -208,13 +208,13 @@ public class gui_pp extends javax.swing.JFrame {
 
     private void exec_pnl_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exec_pnl_3ActionPerformed
         
-        //Wygenerowane tablicy 300 elementowej z randomowymi liczbami z zakresu od -999 do 999
+        //Wygenerowane tablicy number elementowej z randomowymi liczbami z zakresu od -999 do 999
         //Oraz sklonowanie tablicy do 2 identycznej
         java.util.Random r = new java.util.Random();
         int number = Integer.parseInt(generation_number_p3.getText());
         int[] firstArray = r.ints(-999, 999).limit(number).toArray();
         int[] seccondArray = firstArray.clone();
-     
+        
         //Przekierowane outputu na panel 3 (JTextArea Panel 3)
         PrintStream out = new PrintStream (new TextAreaOutputStream(output_pnl_3));
         System.setOut(out);
