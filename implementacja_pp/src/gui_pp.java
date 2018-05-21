@@ -29,7 +29,9 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        alg_choose_p1 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        number_cnt_p1 = new javax.swing.JTextField();
         panel_2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         output_pnl_2 = new javax.swing.JTextArea();
@@ -40,8 +42,6 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         panel_3 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        output_pnl_3 = new javax.swing.JTextArea();
         exec_pnl_3 = new javax.swing.JButton();
         clr_pnl_3 = new javax.swing.JButton();
         gencount_label_p3 = new javax.swing.JLabel();
@@ -50,6 +50,8 @@ public class gui_pp extends javax.swing.JFrame {
         generation_number_p3 = new javax.swing.JTextField();
         alg_choose_p3 = new javax.swing.JComboBox<>();
         alg_label_p3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        output_pnl_3 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +85,19 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel6.setText("Wybierz rodzaj testów:");
         jLabel6.setPreferredSize(new java.awt.Dimension(183, 17));
 
+        alg_choose_p1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Wszystkie", "O(n3)+O(n2)", "O(n3)+O(nlogn)", "O(n2)+O(nlogn)" }));
+        alg_choose_p1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alg_choose_p1ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setText("Ile liczb chcesz wygenerwać?");
+        jLabel7.setPreferredSize(new java.awt.Dimension(183, 17));
+
+        number_cnt_p1.setText("10");
+
         javax.swing.GroupLayout panel_1Layout = new javax.swing.GroupLayout(panel_1);
         panel_1.setLayout(panel_1Layout);
         panel_1Layout.setHorizontalGroup(
@@ -95,10 +110,15 @@ public class gui_pp extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panel_1Layout.createSequentialGroup()
                         .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_1Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(panel_1Layout.createSequentialGroup()
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(alg_choose_p1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(panel_1Layout.createSequentialGroup()
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(number_cnt_p1)))
                             .addGroup(panel_1Layout.createSequentialGroup()
                                 .addComponent(exec_pnl_1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -116,13 +136,17 @@ public class gui_pp extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                    .addComponent(alg_choose_p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(number_cnt_p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_1)
                     .addComponent(clr_pnl_1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -185,21 +209,16 @@ public class gui_pp extends javax.swing.JFrame {
                 .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 328, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
                 .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_2)
                     .addComponent(clr_pnl_2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Zmienne", panel_2);
-
-        output_pnl_3.setColumns(20);
-        output_pnl_3.setRows(5);
-        output_pnl_3.setPreferredSize(new java.awt.Dimension(159, 64));
-        jScrollPane3.setViewportView(output_pnl_3);
 
         exec_pnl_3.setText("Wykonaj kod");
         exec_pnl_3.addActionListener(new java.awt.event.ActionListener() {
@@ -243,6 +262,10 @@ public class gui_pp extends javax.swing.JFrame {
         alg_label_p3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         alg_label_p3.setText("Jaki algorytm wybierasz?");
 
+        output_pnl_3.setColumns(20);
+        output_pnl_3.setRows(5);
+        jScrollPane3.setViewportView(output_pnl_3);
+
         javax.swing.GroupLayout panel_3Layout = new javax.swing.GroupLayout(panel_3);
         panel_3.setLayout(panel_3Layout);
         panel_3Layout.setHorizontalGroup(
@@ -250,25 +273,26 @@ public class gui_pp extends javax.swing.JFrame {
             .addGroup(panel_3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
-                    .addComponent(title_p3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(subtitle_p3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panel_3Layout.createSequentialGroup()
-                        .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_3Layout.createSequentialGroup()
+                        .addComponent(exec_pnl_3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clr_pnl_3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_3Layout.createSequentialGroup()
+                        .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(title_p3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(subtitle_p3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel_3Layout.createSequentialGroup()
                                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(gencount_label_p3)
                                     .addComponent(alg_label_p3))
                                 .addGap(18, 18, 18)
                                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(generation_number_p3)
-                                    .addComponent(alg_choose_p3, 0, 141, Short.MAX_VALUE)))
-                            .addGroup(panel_3Layout.createSequentialGroup()
-                                .addComponent(exec_pnl_3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(clr_pnl_3)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                    .addComponent(alg_choose_p3, 0, 141, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         panel_3Layout.setVerticalGroup(
             panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,12 +309,12 @@ public class gui_pp extends javax.swing.JFrame {
                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(alg_label_p3)
                     .addComponent(alg_choose_p3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_3)
                     .addComponent(clr_pnl_3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -323,7 +347,7 @@ public class gui_pp extends javax.swing.JFrame {
         java.util.Random r = new java.util.Random();
         int number = Integer.parseInt(generation_number_p3.getText());
         int[] firstArray = r.ints(-999, 999).limit(number).toArray();
-        int[] seccondArray = firstArray.clone();
+        int[] seccondArray = Arrays.copyOf(firstArray, firstArray.length);
         
         //Przekierowane outputu na panel 3 (JTextArea Panel 3)
         PrintStream out = new PrintStream (new TextAreaOutputStream(output_pnl_3));
@@ -332,12 +356,7 @@ public class gui_pp extends javax.swing.JFrame {
         
         //Wypisanie tablicy przed sortowaniem
         System.out.println("\nTablica przed sortowaniem: " + Arrays.toString(firstArray) + "\n");
-        
-        //Sortowanie selection sort, obliczanie czasu
-        //Instant start = Instant.now();
-        //System.out.println("Sortowanie metoda selection sort (O (n^2)): " + Arrays.toString(sortowanie_test.selectionSort(firstArray)));
-        //System.out.println(Arrays.toString(sortowanie_test.bubbleSort(firstArray)));
-        
+                
         //Wybieranie alg. sortowania
         String sortowanie = alg_choose_p3.getSelectedItem().toString();
         if(sortowanie == "Selection"){
@@ -351,9 +370,6 @@ public class gui_pp extends javax.swing.JFrame {
             Instant end = Instant.now();
             System.out.println(Duration.between(start, end));
         }
-        
-        //Instant end = Instant.now();
-        //System.out.println(Duration.between(start, end));
         
         //Sortowanie wbudowaną funkcją sortowania, obliczanie czasu
         Instant start2 = Instant.now();
@@ -382,37 +398,81 @@ public class gui_pp extends javax.swing.JFrame {
         //Wygenerowane tablicy number elementowej z randomowymi liczbami z zakresu od -999 do 999
         //Oraz sklonowanie tablicy do 2 identycznej
         java.util.Random r = new java.util.Random();
-        int number = Integer.parseInt(generation_number_p3.getText());
-        int[] firstArray = r.ints(-999, 999).limit(2137).toArray();
-        int[] seccondArray = firstArray.clone();
-        int[] thirdArray = firstArray.clone();
-        
+        int number = Integer.parseInt(number_cnt_p1.getText());
+        int[] firstArray = r.ints(-999, 999).limit(number).toArray();
+        int[] seccondArray = Arrays.copyOf(firstArray, firstArray.length);
+        int[] thirdArray = Arrays.copyOf(firstArray, firstArray.length);
+                
         // Przekierowane outputu na panel 1
         PrintStream out = new PrintStream (new TextAreaOutputStream(output_pnl_1));
         System.setOut(out);
         System.setErr(out);
+       
+        System.out.print("Wygenerowana lista: " + Arrays.toString(firstArray));
         
-        Instant start2 = Instant.now();
-        petle.loops_On3(thirdArray);
-        Instant end2 = Instant.now();
-        System.out.println("\n"+ "O(n3)" + Duration.between(start2, end2));
-                
-        Instant start1 = Instant.now();
-        petle.loops_On2(seccondArray);
-        Instant end1 = Instant.now();
-        System.out.println("\n"+ "O(n2)" + Duration.between(start1, end1));
-        
-        Instant start0 = Instant.now();
-        petle.loops_On(firstArray);
-        Instant end0 = Instant.now();
-        System.out.println("\n" + "O(n)" + Duration.between(start0, end0));
-                       
+        String lops = alg_choose_p1.getSelectedItem().toString();
+        if ( lops == "Wszystkie" ) {
+            
+            Instant start2 = Instant.now();
+            petle.loops_On3(thirdArray);
+            Instant end2 = Instant.now();
+            System.out.println("\n"+ "O(n3): " + Duration.between(start2, end2));
 
+            Instant start1 = Instant.now();
+            petle.loops_On2(seccondArray);
+            Instant end1 = Instant.now();
+            System.out.println("\n"+ "O(n2): " + Duration.between(start1, end1));
+        
+            Instant start0 = Instant.now();
+            petle.loops_On(firstArray);
+            Instant end0 = Instant.now();
+            System.out.println("\n" + "O(n): " + Duration.between(start0, end0));
+            
+        } else if ( lops == "O(n3)+O(n2)") {
+            
+            Instant start2 = Instant.now();
+            petle.loops_On3(thirdArray);
+            Instant end2 = Instant.now();
+            System.out.println("\n"+ "O(n3): " + Duration.between(start2, end2));
+
+            Instant start1 = Instant.now();
+            petle.loops_On2(seccondArray);
+            Instant end1 = Instant.now();
+            System.out.println("\n"+ "O(n2): " + Duration.between(start1, end1));
+            
+        } else if ( lops == "O(n3)+O(nlogn)") { 
+            
+            Instant start2 = Instant.now();
+            petle.loops_On3(thirdArray);
+            Instant end2 = Instant.now();
+            System.out.println("\n"+ "O(n3): " + Duration.between(start2, end2));
+            
+            Instant start0 = Instant.now();
+            petle.loops_On(firstArray);
+            Instant end0 = Instant.now();  
+            System.out.println("\n" + "O(n): " + Duration.between(start0, end0));
+
+        } else if (lops == "O(n2)+O(nlogn)") {
+            
+            Instant start1 = Instant.now();
+            petle.loops_On2(seccondArray);
+            Instant end1 = Instant.now();
+            System.out.println("\n O(n2): " + Duration.between(start1, end1));
+            
+            Instant start0 = Instant.now();
+            petle.loops_On(firstArray);
+            Instant end0 = Instant.now();  
+            System.out.println("O(n): " + Duration.between(start0, end0));
+        }
     }//GEN-LAST:event_exec_pnl_1ActionPerformed
 
     private void clr_pnl_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clr_pnl_1ActionPerformed
         output_pnl_1.setText("");
     }//GEN-LAST:event_clr_pnl_1ActionPerformed
+
+    private void alg_choose_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alg_choose_p1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alg_choose_p1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -442,6 +502,7 @@ public class gui_pp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> alg_choose_p1;
     private javax.swing.JComboBox<String> alg_choose_p3;
     private javax.swing.JLabel alg_label_p3;
     private javax.swing.JButton clr_pnl_1;
@@ -453,17 +514,18 @@ public class gui_pp extends javax.swing.JFrame {
     private javax.swing.JLabel gencount_label_p3;
     private javax.swing.JTextField generation_number_p3;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField number_cnt_p1;
     private javax.swing.JTextArea output_pnl_1;
     private javax.swing.JTextArea output_pnl_2;
     private javax.swing.JTextArea output_pnl_3;
