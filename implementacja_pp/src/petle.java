@@ -1,3 +1,8 @@
+/*
+Created by Adrian Rupala 2018
+@author Adrixop95
+ */
+
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
@@ -5,38 +10,49 @@ import java.util.Arrays;
 public class petle {
     
     // Przykłady wpływu spłaszacznia pętli (złożoności obliczeniowe od O(nlogn), O(n^2), O(n^3) zależne od ilości pętli)
-    public static int[] loops_On(int[] data3){
+    public static int[] loops_On(int[] data){
         for (int i=0; i<1000; i++){
-            Arrays.sort(data3);
+            Arrays.sort(data);
+            Arrays.binarySearch(data, 4, 8, 12);
+            Arrays.hashCode(data);
+            Arrays.toString(data);
         }
-        return data3;
+        return data;
     }
 
-    public static int[] loops_On2(int[] data2){
+    public static int[] loops_On2(int[] data){
         for (int i=0; i<100; i++){
             for (int j=0; j<10; j++){
-                Arrays.sort(data2);
+                Arrays.sort(data);
+                Arrays.binarySearch(data, 4, 8, 12);
+                Arrays.hashCode(data);
+                Arrays.toString(data);
             }
         }
-        return data2;
+        return data;
     }    
     
-    public static int[] loops_On3(int[] data1){
+    public static int[] loops_On3(int[] data){
         for (int i = 0; i < 10; i++){
             for (int j = 0; j < 10; j++){
                 for (int q = 0; q < 10; q++){
-                    Arrays.sort(data1);
+                    Arrays.sort(data);
+                    Arrays.binarySearch(data, 4, 8, 12);
+                    Arrays.hashCode(data);
+                    Arrays.toString(data);
                 }
             }
         }
-        return data1;
+        return data;
     }
     
+    
+    // Wywołania dla złożoności
     public static int[] wyw_loops_On3(int[] data){
         Instant start2 = Instant.now();
         loops_On3(data);
         Instant end2 = Instant.now();
-        System.out.println("\n O(n3): " + Duration.between(start2, end2));
+        System.out.println("\n Czas wykonania algorytmu o zlozonosci O(n3): " + Duration.between(start2, end2));
         
         return null;
     }
@@ -45,7 +61,7 @@ public class petle {
         Instant start1 = Instant.now();
         loops_On2(data);
         Instant end1 = Instant.now();
-        System.out.println("\n O(n2): " + Duration.between(start1, end1));
+        System.out.println("\n Czas wykonania algorytmu o zlozonosci O(n2): " + Duration.between(start1, end1));
         
         return null;
     }
@@ -54,7 +70,7 @@ public class petle {
         Instant start0 = Instant.now();
         loops_On(data);
         Instant end0 = Instant.now();  
-        System.out.println("\n O(nlogn): " + Duration.between(start0, end0));
+        System.out.println("\n Czas wykonania algorytmu o zlozonosci O(nlogn): " + Duration.between(start0, end0));
         
         return null;
     }
@@ -81,7 +97,7 @@ public class petle {
         }
         
         Instant end0 = Instant.now();  
-        System.out.println("\n Czas dzialania petli niepolaczonych [sort, binarySearch, hashCode, toString]: " + Duration.between(start0, end0));
+        System.out.println("\n Czas dzialania petli niepolaczonych: " + Duration.between(start0, end0));
                 
         return data;
     }
@@ -99,7 +115,7 @@ public class petle {
         }
         
         Instant end0 = Instant.now();  
-        System.out.println("\n Czas dzialania petli polaczonych [sort, binarySearch, hashCode, toString]: " + Duration.between(start0, end0));
+        System.out.println("\n Czas dzialania petli polaczonych: " + Duration.between(start0, end0));
 
         
         return data;

@@ -1,3 +1,8 @@
+/*
+Created by Adrian Rupala 2018
+@author Adrixop95
+ */
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.PrintStream;
@@ -40,7 +45,13 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        get_A = new javax.swing.JTextField();
+        get_B = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        get_Z = new javax.swing.JTextField();
+        var_choose_p2 = new javax.swing.JComboBox<>();
         panel_3 = new javax.swing.JPanel();
         exec_pnl_3 = new javax.swing.JButton();
         clr_pnl_3 = new javax.swing.JButton();
@@ -75,7 +86,7 @@ public class gui_pp extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Pętle");
+        jLabel4.setText("Optymalizacja kodu związana z pętlami.");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -162,23 +173,50 @@ public class gui_pp extends javax.swing.JFrame {
         jScrollPane2.setViewportView(output_pnl_2);
 
         exec_pnl_2.setText("Wykonaj kod");
+        exec_pnl_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exec_pnl_2ActionPerformed(evt);
+            }
+        });
 
         clr_pnl_2.setText("Wyczyść");
+        clr_pnl_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clr_pnl_2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Zmienne");
+        jLabel1.setText("Nieużywany kod.");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Redukcje operatorów, zmiana deklaracji zmiennych, usuwanie nieużywanego kodu.");
+        jLabel2.setText("Jak duży wpływ ma nieużywany kod na aplikację?");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Wybierz test:");
         jLabel3.setPreferredSize(new java.awt.Dimension(183, 17));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(68, 20));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setText("Podaj liczbę A:");
+        jLabel8.setPreferredSize(new java.awt.Dimension(183, 17));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Podaj liczbę B:");
+        jLabel9.setPreferredSize(new java.awt.Dimension(183, 17));
+
+        get_A.setText("1");
+
+        get_B.setText("1");
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setText("Podaj liczbę Z:");
+        jLabel10.setPreferredSize(new java.awt.Dimension(183, 17));
+
+        get_Z.setText("10");
+
+        var_choose_p2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dodawanie 2 liczb", "Mnozenie 2 liczb", "Operacje lacznie tablic", "Zabawa" }));
 
         javax.swing.GroupLayout panel_2Layout = new javax.swing.GroupLayout(panel_2);
         panel_2.setLayout(panel_2Layout);
@@ -191,7 +229,7 @@ public class gui_pp extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panel_2Layout.createSequentialGroup()
-                        .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(panel_2Layout.createSequentialGroup()
                                 .addComponent(exec_pnl_2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -199,7 +237,19 @@ public class gui_pp extends javax.swing.JFrame {
                             .addGroup(panel_2Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(var_choose_p2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(panel_2Layout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(get_A))
+                            .addGroup(panel_2Layout.createSequentialGroup()
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(get_B))
+                            .addGroup(panel_2Layout.createSequentialGroup()
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(get_Z, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -213,8 +263,20 @@ public class gui_pp extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
+                    .addComponent(var_choose_p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(get_A, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(get_B, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(get_Z, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                 .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_2)
                     .addComponent(clr_pnl_2))
@@ -223,7 +285,7 @@ public class gui_pp extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Zmienne", panel_2);
+        jTabbedPane1.addTab("Nieużywany kod", panel_2);
 
         exec_pnl_3.setText("Wykonaj kod");
         exec_pnl_3.addActionListener(new java.awt.event.ActionListener() {
@@ -244,11 +306,11 @@ public class gui_pp extends javax.swing.JFrame {
 
         title_p3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         title_p3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title_p3.setText("Ta część aplikacji porównuje dwa sortowania.");
+        title_p3.setText("Ta część aplikacji porównuje dwa algorytmy sortowania.");
 
         subtitle_p3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         subtitle_p3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        subtitle_p3.setText("Porównanie wybranego algorytmu sortowania oraz wbudowanego algorytmu Arrays.sort (quicksort).");
+        subtitle_p3.setText("Porównanie wybranego algorytmu sortowania oraz wbudowanego algorytmu quicksort.");
 
         generation_number_p3.setText("10");
         generation_number_p3.addActionListener(new java.awt.event.ActionListener() {
@@ -257,7 +319,7 @@ public class gui_pp extends javax.swing.JFrame {
             }
         });
 
-        alg_choose_p3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selection", "Bubble" }));
+        alg_choose_p3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selection", "Bubble", "Insertion" }));
         alg_choose_p3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alg_choose_p3ActionPerformed(evt);
@@ -265,7 +327,7 @@ public class gui_pp extends javax.swing.JFrame {
         });
 
         alg_label_p3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        alg_label_p3.setText("Jaki algorytm wybierasz?");
+        alg_label_p3.setText("Jaki algorytm sortowania wybierasz?");
 
         output_pnl_3.setColumns(20);
         output_pnl_3.setRows(5);
@@ -289,9 +351,9 @@ public class gui_pp extends javax.swing.JFrame {
                             .addComponent(title_p3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(subtitle_p3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel_3Layout.createSequentialGroup()
-                                .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(gencount_label_p3)
-                                    .addComponent(alg_label_p3))
+                                .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(alg_label_p3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(gencount_label_p3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(generation_number_p3)
@@ -345,61 +407,112 @@ public class gui_pp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void alg_choose_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alg_choose_p3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alg_choose_p3ActionPerformed
+
+    private void generation_number_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generation_number_p3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generation_number_p3ActionPerformed
+
+    private void clr_pnl_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clr_pnl_3ActionPerformed
+
+        // Czyszczenie outputu panelu 3 (sortowania)
+        output_pnl_3.setText("");
+    }//GEN-LAST:event_clr_pnl_3ActionPerformed
+
     private void exec_pnl_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exec_pnl_3ActionPerformed
-        
+
         //Wygenerowane tablicy number elementowej z randomowymi liczbami z zakresu od -999 do 999
         //Oraz sklonowanie tablicy do 2 identycznej
         java.util.Random r = new java.util.Random();
         int number = Integer.parseInt(generation_number_p3.getText());
         int[] firstArray = r.ints(-999, 999).limit(number).toArray();
         int[] seccondArray = Arrays.copyOf(firstArray, firstArray.length);
-        
+
         //Przekierowane outputu na panel 3 (JTextArea Panel 3)
         PrintStream out = new PrintStream (new TextAreaOutputStream(output_pnl_3));
         System.setOut(out);
         System.setErr(out);
-        
+
         //Wypisanie tablicy przed sortowaniem
         System.out.println("\nTablica przed sortowaniem: " + Arrays.toString(firstArray) + "\n");
-                
+
         //Wybieranie alg. sortowania
         String sortowanie = alg_choose_p3.getSelectedItem().toString();
         if(sortowanie == "Selection"){
-            Instant start = Instant.now();
-            System.out.println("Sortowanie metoda selection sort (O (n^2)): " + Arrays.toString(sortowanie_test.selectionSort(firstArray)));
-            Instant end = Instant.now();
-        System.out.println(Duration.between(start, end));
+            sortowanie_test.exec_selectionSort(firstArray);
         } else if(sortowanie == "Bubble"){
-            Instant start = Instant.now();
-            System.out.println("Sortowanie metoda bubble sort (O (n^2)): " + Arrays.toString(sortowanie_test.bubbleSort(firstArray)));
-            Instant end = Instant.now();
-            System.out.println(Duration.between(start, end));
+            sortowanie_test.exec_bubbleSort(firstArray);
+        } else if(sortowanie == "Insertion") {
+            sortowanie_test.exec_insertionSortRecursive(firstArray);
         }
-        
+
         //Sortowanie wbudowaną funkcją sortowania, obliczanie czasu
         Instant start2 = Instant.now();
         Arrays.sort(seccondArray);
-        System.out.println("Sortowanie wbudowana funkcja sortowania Quicksort (O (nlogn)): " + Arrays.toString(seccondArray));
+        System.out.println("\n Sortowanie wbudowanym algorytmem Quick Sort: " + Arrays.toString(seccondArray));
         Instant end2 = Instant.now();
-        System.out.println(Duration.between(start2, end2));
+        System.out.println("Czas sortowania: " + Duration.between(start2, end2));
     }//GEN-LAST:event_exec_pnl_3ActionPerformed
 
-    private void generation_number_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generation_number_p3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_generation_number_p3ActionPerformed
+    private void clr_pnl_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clr_pnl_2ActionPerformed
+        // Czyszczenie panelu 2
+        output_pnl_2.setText("");
+    }//GEN-LAST:event_clr_pnl_2ActionPerformed
 
-    private void alg_choose_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alg_choose_p3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_alg_choose_p3ActionPerformed
+    private void exec_pnl_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exec_pnl_2ActionPerformed
+        // pobranie liczb i wygenerowanie tablic
+        java.util.Random r = new java.util.Random();
 
-    private void clr_pnl_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clr_pnl_3ActionPerformed
-        
-        // Czyszczenie outputu panelu 3 (sortowania)
-        output_pnl_3.setText("");
-    }//GEN-LAST:event_clr_pnl_3ActionPerformed
+        int a = Integer.parseInt(get_A.getText());
+        int b = Integer.parseInt(get_B.getText());
+        int z = Integer.parseInt(get_Z.getText());
+
+        int[] firstArray = r.ints(-999, 999).limit(a).toArray();
+        int[] seccondArray = r.ints(-999, 999).limit(b).toArray();
+        int[] thirdArray = r.ints(-999, 999).limit(z).toArray();
+
+        //Przekierowanie outputu na panel 2
+        PrintStream out = new PrintStream (new TextAreaOutputStream(output_pnl_2));
+        System.setOut(out);
+        System.setErr(out);
+
+        // Wybierz opcje
+
+        String vars = var_choose_p2.getSelectedItem().toString();
+
+        if ( vars == "Zabawa" ){
+            nieuzywany.exec_dirty_fun(firstArray,firstArray);
+            nieuzywany.exec_fun();
+        } else if ( vars == "Dodawanie 2 liczb" ) {
+            nieuzywany.exec_dirty_code_sum(a, b);
+            nieuzywany.exec_code_sum(a, b);
+        } else if ( vars == "Operacje lacznie tablic") {
+            nieuzywany.exec_dirty_merge(firstArray, seccondArray);
+            nieuzywany.exec_merge(firstArray, seccondArray);
+        } else if( vars == "Mnozenie 2 liczb"){
+            nieuzywany.exec_dirty_multiply_sum(a,b, z);
+            nieuzywany.exec_multiply_sum(a, b, z);
+        }
+    }//GEN-LAST:event_exec_pnl_2ActionPerformed
+
+    private void number_cnt_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_cnt_p1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_number_cnt_p1ActionPerformed
+
+    private void alg_choose_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alg_choose_p1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alg_choose_p1ActionPerformed
+
+    private void clr_pnl_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clr_pnl_1ActionPerformed
+
+        //Czyszczenie panelu outputu
+        output_pnl_1.setText("");
+    }//GEN-LAST:event_clr_pnl_1ActionPerformed
 
     private void exec_pnl_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exec_pnl_1ActionPerformed
-        
+
         // Wygenerowane tablicy number elementowej z randomowymi liczbami z zakresu od -999 do 999
         // Oraz sklonowanie tablicy do 2 identycznej
         java.util.Random r = new java.util.Random();
@@ -407,59 +520,45 @@ public class gui_pp extends javax.swing.JFrame {
         int[] firstArray = r.ints(-999, 999).limit(number).toArray();
         int[] seccondArray = Arrays.copyOf(firstArray, firstArray.length);
         int[] thirdArray = Arrays.copyOf(firstArray, firstArray.length);
-                
+
         // Przekierowane outputu na panel 1
         PrintStream out = new PrintStream (new TextAreaOutputStream(output_pnl_1));
         System.setOut(out);
         System.setErr(out);
-       
+
         // Wypisanie tablicy
         System.out.print("\n Wygenerowana lista: " + Arrays.toString(firstArray));
-        
+
         // Wybór i wywołanie funkcji w zależności od funkcjonalności
         String lops = alg_choose_p1.getSelectedItem().toString();
         if ( lops == "Wszystkie" ) {
-            
+
             petle.wyw_loops_On3(thirdArray);
             petle.wyw_loops_On2(seccondArray);
             petle.wyw_loops_On(firstArray);
-            
+
         } else if ( lops == "O(n3)+O(n2)") {
-            
+
             petle.wyw_loops_On3(thirdArray);
             petle.wyw_loops_On2(seccondArray);
-            
-        } else if ( lops == "O(n3)+O(nlogn)") { 
-            
+
+        } else if ( lops == "O(n3)+O(nlogn)") {
+
             petle.wyw_loops_On3(thirdArray);
             petle.wyw_loops_On(firstArray);
 
         } else if (lops == "O(n2)+O(nlogn)") {
-            
+
             petle.wyw_loops_On2(seccondArray);
             petle.wyw_loops_On(firstArray);
-            
+
         } else if (lops == "Laczenie petli") {
-            
+
             petle.not_combine_loop(seccondArray);
             petle.combine_loop(firstArray);
-            
+
         }
     }//GEN-LAST:event_exec_pnl_1ActionPerformed
-
-    private void clr_pnl_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clr_pnl_1ActionPerformed
-        
-        //Czyszczenie panelu outputu 
-        output_pnl_1.setText("");
-    }//GEN-LAST:event_clr_pnl_1ActionPerformed
-
-    private void alg_choose_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alg_choose_p1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_alg_choose_p1ActionPerformed
-
-    private void number_cnt_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_cnt_p1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_number_cnt_p1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -500,14 +599,19 @@ public class gui_pp extends javax.swing.JFrame {
     private javax.swing.JButton exec_pnl_3;
     private javax.swing.JLabel gencount_label_p3;
     private javax.swing.JTextField generation_number_p3;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField get_A;
+    private javax.swing.JTextField get_B;
+    private javax.swing.JTextField get_Z;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -521,5 +625,6 @@ public class gui_pp extends javax.swing.JFrame {
     private javax.swing.JPanel panel_3;
     private javax.swing.JLabel subtitle_p3;
     private javax.swing.JLabel title_p3;
+    private javax.swing.JComboBox<String> var_choose_p2;
     // End of variables declaration//GEN-END:variables
 }
