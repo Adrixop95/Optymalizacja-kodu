@@ -12,7 +12,7 @@ Jest to aplikacja desktopowa napisana w języku programowania Java która przeds
 + Kod odpowiedzialny za uruchomienie strony internetowej kontra kod uruchamiający stronę internetową z dodatkowym malware obciążającym procesor na 100%.
 
 ### Pobieranie
-Najnowsza wersja aplikacji dostępna jest do pobrania z zakładki [Release](https://github.com/Adrixop95/praca_inzynierska/releases).
+Najnowsza wersja aplikacji dostępna jest do pobrania z zakładki [Release](https://github.com/Adrixop95/Optymalizacja-kodu/releases).
 
 <br><br>
 **Stworzone dla UŚ oraz WIiNoM z ♥**
