@@ -166,7 +166,7 @@
                   <Font name="Tahoma" size="16" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Jak r&#xf3;&#x17c;ne p&#x119;tle wp&#x142;ywaj&#x105; na nasz kod?"/>
+                <Property name="text" type="java.lang.String" value="Wp&#x142;yw z&#x142;o&#x17c;ono&#x15b;ci obliczeniowej na opracje (&#x142;&#x105;czenie p&#x119;tli, sp&#x142;aszczanie p&#x119;tli)."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
@@ -183,11 +183,12 @@
             <Component class="javax.swing.JComboBox" name="alg_choose_p1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
+                  <StringArray count="5">
                     <StringItem index="0" value="Wszystkie"/>
                     <StringItem index="1" value="O(n3)+O(n2)"/>
                     <StringItem index="2" value="O(n3)+O(nlogn)"/>
                     <StringItem index="3" value="O(n2)+O(nlogn)"/>
+                    <StringItem index="4" value="Laczenie petli"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -213,6 +214,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="10"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="number_cnt_p1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

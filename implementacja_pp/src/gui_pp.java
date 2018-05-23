@@ -79,13 +79,13 @@ public class gui_pp extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Jak różne pętle wpływają na nasz kod?");
+        jLabel5.setText("Wpływ złożoności obliczeniowej na opracje (łączenie pętli, spłaszczanie pętli).");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Wybierz rodzaj testów:");
         jLabel6.setPreferredSize(new java.awt.Dimension(183, 17));
 
-        alg_choose_p1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Wszystkie", "O(n3)+O(n2)", "O(n3)+O(nlogn)", "O(n2)+O(nlogn)" }));
+        alg_choose_p1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Wszystkie", "O(n3)+O(n2)", "O(n3)+O(nlogn)", "O(n2)+O(nlogn)", "Laczenie petli" }));
         alg_choose_p1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alg_choose_p1ActionPerformed(evt);
@@ -97,6 +97,11 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel7.setPreferredSize(new java.awt.Dimension(183, 17));
 
         number_cnt_p1.setText("10");
+        number_cnt_p1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number_cnt_p1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_1Layout = new javax.swing.GroupLayout(panel_1);
         panel_1.setLayout(panel_1Layout);
@@ -395,8 +400,8 @@ public class gui_pp extends javax.swing.JFrame {
 
     private void exec_pnl_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exec_pnl_1ActionPerformed
         
-        //Wygenerowane tablicy number elementowej z randomowymi liczbami z zakresu od -999 do 999
-        //Oraz sklonowanie tablicy do 2 identycznej
+        // Wygenerowane tablicy number elementowej z randomowymi liczbami z zakresu od -999 do 999
+        // Oraz sklonowanie tablicy do 2 identycznej
         java.util.Random r = new java.util.Random();
         int number = Integer.parseInt(number_cnt_p1.getText());
         int[] firstArray = r.ints(-999, 999).limit(number).toArray();
@@ -408,71 +413,53 @@ public class gui_pp extends javax.swing.JFrame {
         System.setOut(out);
         System.setErr(out);
        
-        System.out.print("Wygenerowana lista: " + Arrays.toString(firstArray));
+        // Wypisanie tablicy
+        System.out.print("\n Wygenerowana lista: " + Arrays.toString(firstArray));
         
+        // Wybór i wywołanie funkcji w zależności od funkcjonalności
         String lops = alg_choose_p1.getSelectedItem().toString();
         if ( lops == "Wszystkie" ) {
             
-            Instant start2 = Instant.now();
-            petle.loops_On3(thirdArray);
-            Instant end2 = Instant.now();
-            System.out.println("\n"+ "O(n3): " + Duration.between(start2, end2));
-
-            Instant start1 = Instant.now();
-            petle.loops_On2(seccondArray);
-            Instant end1 = Instant.now();
-            System.out.println("\n"+ "O(n2): " + Duration.between(start1, end1));
-        
-            Instant start0 = Instant.now();
-            petle.loops_On(firstArray);
-            Instant end0 = Instant.now();
-            System.out.println("\n" + "O(n): " + Duration.between(start0, end0));
+            petle.wyw_loops_On3(thirdArray);
+            petle.wyw_loops_On2(seccondArray);
+            petle.wyw_loops_On(firstArray);
             
         } else if ( lops == "O(n3)+O(n2)") {
             
-            Instant start2 = Instant.now();
-            petle.loops_On3(thirdArray);
-            Instant end2 = Instant.now();
-            System.out.println("\n"+ "O(n3): " + Duration.between(start2, end2));
-
-            Instant start1 = Instant.now();
-            petle.loops_On2(seccondArray);
-            Instant end1 = Instant.now();
-            System.out.println("\n"+ "O(n2): " + Duration.between(start1, end1));
+            petle.wyw_loops_On3(thirdArray);
+            petle.wyw_loops_On2(seccondArray);
             
         } else if ( lops == "O(n3)+O(nlogn)") { 
             
-            Instant start2 = Instant.now();
-            petle.loops_On3(thirdArray);
-            Instant end2 = Instant.now();
-            System.out.println("\n"+ "O(n3): " + Duration.between(start2, end2));
-            
-            Instant start0 = Instant.now();
-            petle.loops_On(firstArray);
-            Instant end0 = Instant.now();  
-            System.out.println("\n" + "O(n): " + Duration.between(start0, end0));
+            petle.wyw_loops_On3(thirdArray);
+            petle.wyw_loops_On(firstArray);
 
         } else if (lops == "O(n2)+O(nlogn)") {
             
-            Instant start1 = Instant.now();
-            petle.loops_On2(seccondArray);
-            Instant end1 = Instant.now();
-            System.out.println("\n O(n2): " + Duration.between(start1, end1));
+            petle.wyw_loops_On2(seccondArray);
+            petle.wyw_loops_On(firstArray);
             
-            Instant start0 = Instant.now();
-            petle.loops_On(firstArray);
-            Instant end0 = Instant.now();  
-            System.out.println("O(n): " + Duration.between(start0, end0));
+        } else if (lops == "Laczenie petli") {
+            
+            petle.not_combine_loop(seccondArray);
+            petle.combine_loop(firstArray);
+            
         }
     }//GEN-LAST:event_exec_pnl_1ActionPerformed
 
     private void clr_pnl_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clr_pnl_1ActionPerformed
+        
+        //Czyszczenie panelu outputu 
         output_pnl_1.setText("");
     }//GEN-LAST:event_clr_pnl_1ActionPerformed
 
     private void alg_choose_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alg_choose_p1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_alg_choose_p1ActionPerformed
+
+    private void number_cnt_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_cnt_p1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_number_cnt_p1ActionPerformed
 
     public static void main(String args[]) {
 
