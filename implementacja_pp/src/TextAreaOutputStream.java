@@ -1,3 +1,8 @@
+/*
+Created by Adrian Rupala 2018
+@author Adrixop95
+ */
+
 import java.io.IOException;
 import java.io.OutputStream;
 import javax.swing.JTextArea;

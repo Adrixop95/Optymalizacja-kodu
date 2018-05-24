@@ -10,6 +10,8 @@ Jest to aplikacja desktopowa napisana w języku programowania Java która przeds
 + Porównanie czasu działania osobnych pętli dla każdej funkcjonalności vs jedna pętla z całą funkcjonalnością (operacja na strukturze danych: tablica; Arrays.sort, Arrays.binarySearch, hashCode, toString).
 + Porównanie czasów działania dla funkcji posiadających niepotrzebny kod kontra optymalny kod (operacja dodawania, mnożenia, łączenia tablic).
 + Kod odpowiedzialny za uruchomienie strony internetowej kontra kod uruchamiający stronę internetową z dodatkowym malware obciążającym procesor na 100%.
++ Porównanie czasu działania pętli for a do-while.
++ Porównanie różnic skończonych a mnożenia.
 
 ### Pobieranie
 Najnowsza wersja aplikacji dostępna jest do pobrania z zakładki [Release](https://github.com/Adrixop95/Optymalizacja-kodu/releases).

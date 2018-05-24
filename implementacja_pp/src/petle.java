@@ -48,31 +48,25 @@ public class petle {
     
     
     // Wywołania dla złożoności
-    public static int[] wyw_loops_On3(int[] data){
+    public static void wyw_loops_On3(int[] data){
         Instant start2 = Instant.now();
         loops_On3(data);
         Instant end2 = Instant.now();
         System.out.println("\n Czas wykonania algorytmu o zlozonosci O(n3): " + Duration.between(start2, end2));
-        
-        return null;
     }
     
-    public static int[] wyw_loops_On2(int[] data){
+    public static void wyw_loops_On2(int[] data){
         Instant start1 = Instant.now();
         loops_On2(data);
         Instant end1 = Instant.now();
         System.out.println("\n Czas wykonania algorytmu o zlozonosci O(n2): " + Duration.between(start1, end1));
-        
-        return null;
     }
     
-    public static int[] wyw_loops_On(int[] data){
+    public static void wyw_loops_On(int[] data){
         Instant start0 = Instant.now();
         loops_On(data);
         Instant end0 = Instant.now();  
         System.out.println("\n Czas wykonania algorytmu o zlozonosci O(nlogn): " + Duration.between(start0, end0));
-        
-        return null;
     }
     
     

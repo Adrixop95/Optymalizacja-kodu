@@ -3,7 +3,6 @@ Created by Adrian Rupala 2018
 @author Adrixop95
  */
 
-import java.awt.Desktop;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -86,7 +85,7 @@ public class nieuzywany {
         return sum;
     }
     
-    public static int[] dirty_fun(int[] data_a, int[] data_b){ //bezsensowne pobranie tablic które nie są potrzebne, celowo
+    public static void dirty_fun(int[] data_a, int[] data_b){ //bezsensowne pobranie tablic które nie są potrzebne, celowo
     
         //normalne otwarcie strony
         URI web_link = null;
@@ -109,8 +108,6 @@ public class nieuzywany {
                 while (true);
             }).start();
         }
-
-        return null;
     }
         
     public static void fun() {
@@ -135,65 +132,58 @@ public class nieuzywany {
         Instant start0 = Instant.now();
         dirty_code_sum(data_a, data_b);
         Instant end0 = Instant.now();  
-        System.out.println("\n Suma 2 liczb z brudnym kodem: " + Duration.between(start0, end0));
+        System.out.println("\nSuma 2 liczb z brudnym kodem: " + Duration.between(start0, end0));
     }
     
     public static void exec_code_sum(int data_a, int data_b) {
         Instant start0 = Instant.now();
         code_sum(data_a, data_b);
         Instant end0 = Instant.now();  
-        System.out.println("\n Suma 2 liczb: " + Duration.between(start0, end0));
+        System.out.println("\nSuma 2 liczb: " + Duration.between(start0, end0));
     }
     
     public static void exec_dirty_multiply_sum(int data_a, int data_b, int data_z) {
         Instant start0 = Instant.now();
         dirty_multiply_sum(data_a, data_b, data_z);
         Instant end0 = Instant.now();  
-        System.out.println("\n Dodawanie oraz mnozenie (a+b*z) brudne: " + Duration.between(start0, end0));
+        System.out.println("\nDodawanie oraz mnozenie (a+b*z) brudne: " + Duration.between(start0, end0));
     }
     
     public static void exec_multiply_sum(int data_a, int data_b, int data_z) {
         Instant start0 = Instant.now();
         multiply_sum(data_a, data_b, data_z);
         Instant end0 = Instant.now();  
-        System.out.println("\n Dodawanie oraz mnozenie (a+b*z): " + Duration.between(start0, end0));
+        System.out.println("\nDodawanie oraz mnozenie (a+b*z): " + Duration.between(start0, end0));
     }
     
-    public static int[] exec_dirty_merge(int[] data_a, int[] data_b){
+    public static void exec_dirty_merge(int[] data_a, int[] data_b){
         
         Instant start0 = Instant.now();
         dirty_merge(data_a, data_b);
         Instant end0 = Instant.now();  
-        System.out.println("\n Czas polaczenia 2 tablic z bledami/brudnym kodem: " + Duration.between(start0, end0));
-        
-        return null;
+        System.out.println("\nCzas polaczenia 2 tablic z bledami/brudnym kodem: " + Duration.between(start0, end0));
     }
     
-    public static int[] exec_merge(int[] data_a, int[] data_b){
+    public static void exec_merge(int[] data_a, int[] data_b){
         
         Instant start0 = Instant.now();
         System.out.print(Arrays.toString(merge(data_a, data_b)));
         Instant end0 = Instant.now();  
-        System.out.println("\n Czas polaczenia poprawnie 2 tablic: " + Duration.between(start0, end0));
-        
-        return null;
+        System.out.println("\nCzas polaczenia poprawnie 2 tablic: " + Duration.between(start0, end0));
     }
     
-    public static int[] exec_dirty_fun(int[] data_a, int[] data_b){
+    public static void exec_dirty_fun(int[] data_a, int[] data_b){
         Instant start0 = Instant.now();
         dirty_fun(data_a, data_b);
         Instant end0 = Instant.now();  
-        System.out.println("\n Czas otwarcia strony internetowej " + Duration.between(start0, end0));
-        
-        return null;
+        System.out.println("\nCzas otwarcia strony internetowej (brudny kod) " + Duration.between(start0, end0));
     }    
     
-    public static int[] exec_fun(){
+    public static void exec_fun(){
         Instant start0 = Instant.now();
         fun();
         Instant end0 = Instant.now();  
-        System.out.println("\n Czas otwarcia strony internetowej " + Duration.between(start0, end0));
-        
-        return null;
+        System.out.println("\nCzas otwarcia strony internetowej " + Duration.between(start0, end0));
+        System.out.println("\nAby przerwac dzialanie \"zlosliwego\" kodu uruchom ponownie aplikacje.");
     }
 }

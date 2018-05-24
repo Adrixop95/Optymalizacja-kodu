@@ -67,24 +67,20 @@ public class sortowanie_test {
     
     // Wywołanie gotowych schematów sortowań 
     
-    public static int[] exec_selectionSort(int[] data) {
+    public static void exec_selectionSort(int[] data) {
         
         Instant start = Instant.now();
         System.out.println("Posortowania tablica algorytmem Selection Sort: " + Arrays.toString(selectionSort(data)));
         Instant end = Instant.now();
         System.out.println("Czas sortowania: " + Duration.between(start, end));
-            
-        return null;
     }
     
-    public static int[] exec_bubbleSort(int[] data) {
+    public static void exec_bubbleSort(int[] data) {
         
         Instant start = Instant.now();
         System.out.println("Posortowania tablica algorytmem Bubble Sort: " + Arrays.toString(bubbleSort(data)));
         Instant end = Instant.now();
         System.out.println("Czas sortowania: " + Duration.between(start, end));
-            
-        return null;        
     }
     
     public static void exec_insertionSortRecursive(int[] data){
@@ -92,6 +88,5 @@ public class sortowanie_test {
         System.out.println("Posortowania tablica algorytmem Insertion Sort: " + Arrays.toString(insertionSortRecursive(data, data.length)));
         Instant end = Instant.now();
         System.out.println("Czas sortowania: " + Duration.between(start, end));
-        
     }
 }
