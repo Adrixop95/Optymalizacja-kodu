@@ -12,6 +12,7 @@ Jest to aplikacja desktopowa napisana w języku programowania Java która przeds
 + Kod odpowiedzialny za uruchomienie strony internetowej kontra kod uruchamiający stronę internetową z dodatkowym malware obciążającym procesor na 100%.
 + Porównanie czasu działania pętli for a do-while.
 + Porównanie różnic skończonych a mnożenia.
++ Zagadnienie silnej redukcji dla wyrażeń matematycznych.
 
 ### Pobieranie
 Najnowsza wersja aplikacji dostępna jest do pobrania z zakładki [Release](https://github.com/Adrixop95/Optymalizacja-kodu/releases).
