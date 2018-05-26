@@ -433,7 +433,7 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Wybierz rodzaj testów:");
 
-        alg_choose_p4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roznice skonczone", "Petle for/do-while" }));
+        alg_choose_p4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roznice skonczone", "Petle for/do-while", "Silna redukcja" }));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setText("Podaj liczbę:");
@@ -687,6 +687,9 @@ public class gui_pp extends javax.swing.JFrame {
         } else if (test == "Petle for/do-while") { 
             unikanie.exec_dirty_loop_overhead(firstArray);
             unikanie.exec_loop_overhead(firstArray);
+        } else if (test == "Silna redukcja"){
+            unikanie.exec_dirty_strength_reduction(number);
+            unikanie.exec_strength_reduction(number);
         }
     }//GEN-LAST:event_exec_pnl4ActionPerformed
 

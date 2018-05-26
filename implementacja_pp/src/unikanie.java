@@ -45,6 +45,23 @@ public class unikanie {
         return data;
     }
     
+    public static void dirty_strength_reduction(int data){
+        
+        int i, sum = 0;
+        
+        for (i = 1; i <= data; i++){
+            sum += i;
+        }
+        
+        System.out.print(sum);
+    }
+    
+    public static void strength_reduction(int data){
+        
+        int sum = data * (1 + data) / 2;
+        System.out.print(sum);
+    }     
+    
     
     //Wywołania i testy
     public static void exec_dirty_avoid_multiplies(int data){
@@ -58,7 +75,7 @@ public class unikanie {
         Instant start = Instant.now();
         avoid_multiplies(data);
         Instant end = Instant.now();
-        System.out.println("\nnUzycie roznic skonczyonch aby uniknac mnozenia: " + Duration.between(start, end));
+        System.out.println("\nUzycie roznic skonczyonch aby uniknac mnozenia: " + Duration.between(start, end));
     }    
      
     public static void exec_dirty_loop_overhead(int[] data){
@@ -73,6 +90,22 @@ public class unikanie {
         loop_overhead(data);
         Instant end = Instant.now();
         System.out.println("\nPetla do-while: " + Duration.between(start, end));   
+    }
+    
+    public static void exec_dirty_strength_reduction(int data){
+        
+        Instant start = Instant.now();
+        dirty_strength_reduction(data);
+        Instant end = Instant.now();
+        System.out.println("\nSilna redukcja (brudny kod): " + Duration.between(start, end));   
+    }
+    
+    public static void exec_strength_reduction(int data){
+                
+        Instant start = Instant.now();
+        strength_reduction(data);
+        Instant end = Instant.now();
+        System.out.println("\nSilna redukcja: " + Duration.between(start, end));   
     }
     
 }

@@ -743,9 +743,10 @@
             <Component class="javax.swing.JComboBox" name="alg_choose_p4">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
+                  <StringArray count="3">
                     <StringItem index="0" value="Roznice skonczone"/>
                     <StringItem index="1" value="Petle for/do-while"/>
+                    <StringItem index="2" value="Silna redukcja"/>
                   </StringArray>
                 </Property>
               </Properties>
