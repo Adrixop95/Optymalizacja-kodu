@@ -13,9 +13,13 @@ Jest to aplikacja desktopowa napisana w języku programowania Java która przeds
 + Porównanie czasu działania pętli for a do-while.
 + Porównanie różnic skończonych a mnożenia.
 + Zagadnienie silnej redukcji dla wyrażeń matematycznych.
++ Generowane wykresów dla sortowań oraz pętli o różnych złożonościach obliczeniowych.
 
 ### Pobieranie
 Najnowsza wersja aplikacji dostępna jest do pobrania z zakładki [Release](https://github.com/Adrixop95/Optymalizacja-kodu/releases).
+
+### Uznanie twórczości
+Do generowania wykresów została użyta biblioteka [JFreeChart](https://github.com/jfree/jfreechart).
 
 <br><br>
 **Stworzone dla UŚ oraz WIiNoM z ♥**
