@@ -1,12 +1,11 @@
-
-import java.time.Duration;
-import java.time.Instant;
-import java.util.Arrays;
-
 /*
 Created by Adrian Rupala 2018
 @author Adrixop95
  */
+
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Arrays;
 
 public class unikanie {
     
@@ -69,6 +68,13 @@ public class unikanie {
         dirty_avoid_multiplies(data);
         Instant end = Instant.now();
         System.out.println("\nZwykle mnozenie: " + Duration.between(start, end));
+    }
+    
+    public static void time_d_avoid_multiplies(int data){
+        Instant start = Instant.now();
+        dirty_avoid_multiplies(data);
+        Instant end = Instant.now();
+        System.out.format("%f%n",Duration.between(start, end));
     }
     
     public static void exec_avoid_multiplies(int data){

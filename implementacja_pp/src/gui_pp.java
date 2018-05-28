@@ -37,6 +37,7 @@ public class gui_pp extends javax.swing.JFrame {
         alg_choose_p1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         number_cnt_p1 = new javax.swing.JTextField();
+        chart_p1 = new javax.swing.JButton();
         panel_2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         output_pnl_2 = new javax.swing.JTextArea();
@@ -52,6 +53,7 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         get_Z = new javax.swing.JTextField();
         var_choose_p2 = new javax.swing.JComboBox<>();
+        chart_p2 = new javax.swing.JButton();
         panel_3 = new javax.swing.JPanel();
         exec_pnl_3 = new javax.swing.JButton();
         clr_pnl_3 = new javax.swing.JButton();
@@ -63,6 +65,7 @@ public class gui_pp extends javax.swing.JFrame {
         alg_label_p3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         output_pnl_3 = new javax.swing.JTextArea();
+        chart_p3 = new javax.swing.JButton();
         panel_4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -74,6 +77,7 @@ public class gui_pp extends javax.swing.JFrame {
         alg_choose_p4 = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
         number_cnt_p4 = new javax.swing.JTextField();
+        chart_p4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +129,8 @@ public class gui_pp extends javax.swing.JFrame {
             }
         });
 
+        chart_p1.setText("Wykres");
+
         javax.swing.GroupLayout panel_1Layout = new javax.swing.GroupLayout(panel_1);
         panel_1.setLayout(panel_1Layout);
         panel_1Layout.setHorizontalGroup(
@@ -136,21 +142,22 @@ public class gui_pp extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panel_1Layout.createSequentialGroup()
-                        .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(panel_1Layout.createSequentialGroup()
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(alg_choose_p1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panel_1Layout.createSequentialGroup()
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(number_cnt_p1)))
+                        .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(panel_1Layout.createSequentialGroup()
-                                .addComponent(exec_pnl_1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(clr_pnl_1)))
-                        .addGap(0, 433, Short.MAX_VALUE)))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(alg_choose_p1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel_1Layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(number_cnt_p1)))
+                        .addGap(0, 433, Short.MAX_VALUE))
+                    .addGroup(panel_1Layout.createSequentialGroup()
+                        .addComponent(exec_pnl_1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clr_pnl_1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chart_p1)))
                 .addContainerGap())
         );
         panel_1Layout.setVerticalGroup(
@@ -171,7 +178,8 @@ public class gui_pp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_1)
-                    .addComponent(clr_pnl_1))
+                    .addComponent(clr_pnl_1)
+                    .addComponent(chart_p1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -229,6 +237,8 @@ public class gui_pp extends javax.swing.JFrame {
 
         var_choose_p2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dodawanie 2 liczb", "Mnozenie 2 liczb", "Operacje lacznie tablic", "Malware" }));
 
+        chart_p2.setText("Wykres");
+
         javax.swing.GroupLayout panel_2Layout = new javax.swing.GroupLayout(panel_2);
         panel_2.setLayout(panel_2Layout);
         panel_2Layout.setHorizontalGroup(
@@ -267,7 +277,8 @@ public class gui_pp extends javax.swing.JFrame {
                                     .addGroup(panel_2Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(get_Z, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chart_p2)))
                 .addContainerGap())
         );
         panel_2Layout.setVerticalGroup(
@@ -296,7 +307,8 @@ public class gui_pp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                 .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_2)
-                    .addComponent(clr_pnl_2))
+                    .addComponent(clr_pnl_2)
+                    .addComponent(chart_p2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -350,6 +362,8 @@ public class gui_pp extends javax.swing.JFrame {
         output_pnl_3.setRows(5);
         jScrollPane3.setViewportView(output_pnl_3);
 
+        chart_p3.setText("Wykres");
+
         javax.swing.GroupLayout panel_3Layout = new javax.swing.GroupLayout(panel_3);
         panel_3.setLayout(panel_3Layout);
         panel_3Layout.setHorizontalGroup(
@@ -357,26 +371,25 @@ public class gui_pp extends javax.swing.JFrame {
             .addGroup(panel_3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addComponent(title_p3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(subtitle_p3, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+                    .addGroup(panel_3Layout.createSequentialGroup()
+                        .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(alg_label_p3, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                            .addComponent(gencount_label_p3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(generation_number_p3, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                            .addComponent(alg_choose_p3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panel_3Layout.createSequentialGroup()
                         .addComponent(exec_pnl_3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clr_pnl_3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panel_3Layout.createSequentialGroup()
-                        .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3)
-                            .addComponent(title_p3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(subtitle_p3, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
-                            .addGroup(panel_3Layout.createSequentialGroup()
-                                .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(alg_label_p3, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                    .addComponent(gencount_label_p3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(generation_number_p3, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                                    .addComponent(alg_choose_p3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chart_p3)))
+                .addContainerGap())
         );
         panel_3Layout.setVerticalGroup(
             panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,7 +409,8 @@ public class gui_pp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addGroup(panel_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_3)
-                    .addComponent(clr_pnl_3))
+                    .addComponent(clr_pnl_3)
+                    .addComponent(chart_p3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -440,6 +454,13 @@ public class gui_pp extends javax.swing.JFrame {
 
         number_cnt_p4.setText("10");
 
+        chart_p4.setText("Wykres");
+        chart_p4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chart_p4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_4Layout = new javax.swing.GroupLayout(panel_4);
         panel_4.setLayout(panel_4Layout);
         panel_4Layout.setHorizontalGroup(
@@ -459,10 +480,15 @@ public class gui_pp extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(clr_pnl_4)))
                         .addGap(18, 18, 18)
-                        .addGroup(panel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(alg_choose_p4, 0, 141, Short.MAX_VALUE)
-                            .addComponent(number_cnt_p4))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(panel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_4Layout.createSequentialGroup()
+                                .addGroup(panel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(alg_choose_p4, 0, 141, Short.MAX_VALUE)
+                                    .addComponent(number_cnt_p4))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_4Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(chart_p4)))))
                 .addContainerGap())
         );
         panel_4Layout.setVerticalGroup(
@@ -483,7 +509,8 @@ public class gui_pp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addGroup(panel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl4)
-                    .addComponent(clr_pnl_4))
+                    .addComponent(clr_pnl_4)
+                    .addComponent(chart_p4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -693,6 +720,20 @@ public class gui_pp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_exec_pnl4ActionPerformed
 
+    private void chart_p4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chart_p4ActionPerformed
+
+        // Wygenerowanie randomowej tablicy, pobranie liczby
+        java.util.Random r = new java.util.Random();
+        int number = Integer.parseInt(number_cnt_p4.getText());
+        int[] firstArray = r.ints(-999, 999).limit(number).toArray();  
+        
+        Instant start1 = Instant.now();
+        unikanie.avoid_multiplies(number);
+        Instant end1 = Instant.now();
+        System.out.println(Duration.between(start1, end1));
+                
+    }//GEN-LAST:event_chart_p4ActionPerformed
+
     public static void main(String args[]) {
 
         try {
@@ -725,6 +766,10 @@ public class gui_pp extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> alg_choose_p3;
     private javax.swing.JComboBox<String> alg_choose_p4;
     private javax.swing.JLabel alg_label_p3;
+    private javax.swing.JButton chart_p1;
+    private javax.swing.JButton chart_p2;
+    private javax.swing.JButton chart_p3;
+    private javax.swing.JButton chart_p4;
     private javax.swing.JButton clr_pnl_1;
     private javax.swing.JButton clr_pnl_2;
     private javax.swing.JButton clr_pnl_3;
