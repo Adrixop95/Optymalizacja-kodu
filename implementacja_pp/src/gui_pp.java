@@ -5,10 +5,12 @@ Created by Adrian Rupala 2018
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.Random;
 
 
 public class gui_pp extends javax.swing.JFrame {
@@ -53,7 +55,6 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         get_Z = new javax.swing.JTextField();
         var_choose_p2 = new javax.swing.JComboBox<>();
-        chart_p2 = new javax.swing.JButton();
         panel_3 = new javax.swing.JPanel();
         exec_pnl_3 = new javax.swing.JButton();
         clr_pnl_3 = new javax.swing.JButton();
@@ -77,7 +78,6 @@ public class gui_pp extends javax.swing.JFrame {
         alg_choose_p4 = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
         number_cnt_p4 = new javax.swing.JTextField();
-        chart_p4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,6 +130,11 @@ public class gui_pp extends javax.swing.JFrame {
         });
 
         chart_p1.setText("Wykres");
+        chart_p1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chart_p1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_1Layout = new javax.swing.GroupLayout(panel_1);
         panel_1.setLayout(panel_1Layout);
@@ -140,7 +145,7 @@ public class gui_pp extends javax.swing.JFrame {
                 .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
                     .addGroup(panel_1Layout.createSequentialGroup()
                         .addGroup(panel_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(panel_1Layout.createSequentialGroup()
@@ -151,7 +156,7 @@ public class gui_pp extends javax.swing.JFrame {
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(number_cnt_p1)))
-                        .addGap(0, 433, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panel_1Layout.createSequentialGroup()
                         .addComponent(exec_pnl_1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -237,8 +242,6 @@ public class gui_pp extends javax.swing.JFrame {
 
         var_choose_p2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dodawanie 2 liczb", "Mnozenie 2 liczb", "Operacje lacznie tablic", "Malware" }));
 
-        chart_p2.setText("Wykres");
-
         javax.swing.GroupLayout panel_2Layout = new javax.swing.GroupLayout(panel_2);
         panel_2.setLayout(panel_2Layout);
         panel_2Layout.setHorizontalGroup(
@@ -277,8 +280,7 @@ public class gui_pp extends javax.swing.JFrame {
                                     .addGroup(panel_2Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(get_Z, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(chart_p2)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panel_2Layout.setVerticalGroup(
@@ -307,8 +309,7 @@ public class gui_pp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                 .addGroup(panel_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl_2)
-                    .addComponent(clr_pnl_2)
-                    .addComponent(chart_p2))
+                    .addComponent(clr_pnl_2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -363,6 +364,11 @@ public class gui_pp extends javax.swing.JFrame {
         jScrollPane3.setViewportView(output_pnl_3);
 
         chart_p3.setText("Wykres");
+        chart_p3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chart_p3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_3Layout = new javax.swing.GroupLayout(panel_3);
         panel_3.setLayout(panel_3Layout);
@@ -454,13 +460,6 @@ public class gui_pp extends javax.swing.JFrame {
 
         number_cnt_p4.setText("10");
 
-        chart_p4.setText("Wykres");
-        chart_p4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chart_p4ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panel_4Layout = new javax.swing.GroupLayout(panel_4);
         panel_4.setLayout(panel_4Layout);
         panel_4Layout.setHorizontalGroup(
@@ -480,15 +479,10 @@ public class gui_pp extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(clr_pnl_4)))
                         .addGap(18, 18, 18)
-                        .addGroup(panel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_4Layout.createSequentialGroup()
-                                .addGroup(panel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(alg_choose_p4, 0, 141, Short.MAX_VALUE)
-                                    .addComponent(number_cnt_p4))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_4Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(chart_p4)))))
+                        .addGroup(panel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(alg_choose_p4, 0, 141, Short.MAX_VALUE)
+                            .addComponent(number_cnt_p4))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panel_4Layout.setVerticalGroup(
@@ -509,8 +503,7 @@ public class gui_pp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addGroup(panel_4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exec_pnl4)
-                    .addComponent(clr_pnl_4)
-                    .addComponent(chart_p4))
+                    .addComponent(clr_pnl_4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -720,19 +713,13 @@ public class gui_pp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_exec_pnl4ActionPerformed
 
-    private void chart_p4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chart_p4ActionPerformed
+    private void chart_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chart_p3ActionPerformed
+        wykres.main();        
+    }//GEN-LAST:event_chart_p3ActionPerformed
 
-        // Wygenerowanie randomowej tablicy, pobranie liczby
-        java.util.Random r = new java.util.Random();
-        int number = Integer.parseInt(number_cnt_p4.getText());
-        int[] firstArray = r.ints(-999, 999).limit(number).toArray();  
-        
-        Instant start1 = Instant.now();
-        unikanie.avoid_multiplies(number);
-        Instant end1 = Instant.now();
-        System.out.println(Duration.between(start1, end1));
-                
-    }//GEN-LAST:event_chart_p4ActionPerformed
+    private void chart_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chart_p1ActionPerformed
+        wykres_p1.main();
+    }//GEN-LAST:event_chart_p1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -760,6 +747,137 @@ public class gui_pp extends javax.swing.JFrame {
             }
         });
     }
+    
+    // Tworzenie wykresu
+    
+    public static int[] gen_same_arr(){
+        
+        int[] firstArray = null;
+        
+        for(int i = 0; i < 10; i++){
+            Random rand = new Random(System.currentTimeMillis());
+            firstArray = rand.ints(-99999, 99999).limit(2137).toArray();
+        }
+        
+        return firstArray;
+    }
+    
+    public static double pass_data_selectionSort(){
+        
+        double data_var = 0.0;
+        
+        for (int i = 0; i < 10; i++){                   
+            Instant start = Instant.now();
+            sortowanie_test.selectionSort(gen_same_arr());
+            Instant end = Instant.now();
+
+            Duration output = Duration.between(start, end);
+            String output_str = output.toString().substring(2, output.toString().length()-1);
+            data_var = Double.parseDouble(output_str);    
+        }
+        
+        return(data_var*10000);
+    }
+    
+    public static double pass_data_bubbleSort(){
+        
+        double data_var = 0.0;
+        
+        for (int i = 0; i < 10; i++){                   
+            Instant start = Instant.now();
+            sortowanie_test.bubbleSort(gen_same_arr());
+            Instant end = Instant.now();
+
+            Duration output = Duration.between(start, end);
+            String output_str = output.toString().substring(2, output.toString().length()-1);
+            data_var = Double.parseDouble(output_str);    
+        }
+        
+        return(data_var*10000);
+    }
+    
+    public static double pass_data_InsertionSortRecursive(){
+        
+        double data_var = 0.0;
+        
+        for (int i = 0; i < 10; i++){                   
+            Instant start = Instant.now();
+            sortowanie_test.insertionSortRecursive(gen_same_arr(), gen_same_arr().length);
+            Instant end = Instant.now();
+
+            Duration output = Duration.between(start, end);
+            String output_str = output.toString().substring(2, output.toString().length()-1);
+            data_var = Double.parseDouble(output_str);    
+        }
+        
+        return(data_var*10000);
+    }
+    
+    public static double quicksort_data() {
+        
+        double data_var = 0.0;
+        
+        for (int i = 0; i < 10; i++){                   
+            Instant start = Instant.now();
+            Arrays.sort(gen_same_arr());
+            Instant end = Instant.now();
+
+            Duration output = Duration.between(start, end);
+            String output_str = output.toString().substring(2, output.toString().length()-1);
+            data_var = Double.parseDouble(output_str);    
+        }
+        
+        return(data_var*10000);       
+    }
+    
+    public static double p1_onlogn(){
+        double data_var = 0.0;
+        
+        for (int i = 0; i < 10; i++){                   
+            Instant start = Instant.now();
+            petle.loops_On(gen_same_arr());
+            Instant end = Instant.now();
+
+            Duration output = Duration.between(start, end);
+            String output_str = output.toString().substring(2, output.toString().length()-1);
+            data_var = Double.parseDouble(output_str);    
+        }
+        
+        return(data_var*100);        
+    }
+    
+    public static double p1_on2(){
+        double data_var = 0.0;
+        
+        for (int i = 0; i < 10; i++){                   
+            Instant start = Instant.now();
+            petle.loops_On2(gen_same_arr());
+            Instant end = Instant.now();
+
+            Duration output = Duration.between(start, end);
+            String output_str = output.toString().substring(2, output.toString().length()-1);
+            data_var = Double.parseDouble(output_str);    
+        }
+        
+        return(data_var*100);        
+    }
+
+    public static double p1_on3(){
+        double data_var = 0.0;
+        
+        for (int i = 0; i < 10; i++){                   
+            Instant start = Instant.now();
+            petle.loops_On3(gen_same_arr());
+            Instant end = Instant.now();
+
+            Duration output = Duration.between(start, end);
+            String output_str = output.toString().substring(2, output.toString().length()-1);
+            data_var = Double.parseDouble(output_str);    
+        }
+        
+        return(data_var*100);        
+    }    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> alg_choose_p1;
@@ -767,9 +885,7 @@ public class gui_pp extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> alg_choose_p4;
     private javax.swing.JLabel alg_label_p3;
     private javax.swing.JButton chart_p1;
-    private javax.swing.JButton chart_p2;
     private javax.swing.JButton chart_p3;
-    private javax.swing.JButton chart_p4;
     private javax.swing.JButton clr_pnl_1;
     private javax.swing.JButton clr_pnl_2;
     private javax.swing.JButton clr_pnl_3;

@@ -25,8 +25,8 @@ public class wykres extends JFrame {
         // Tworzenie wykresu
         JFreeChart chart = ChartFactory.createXYLineChart(
             " ",
+            "Ilość iteracji",
             "Czas działania",
-            "Ilość wywołań",
             dataset,
             PlotOrientation.VERTICAL,
             true, true, false);
@@ -40,31 +40,55 @@ public class wykres extends JFrame {
     private XYDataset createDataset() {
         XYSeriesCollection dataset = new XYSeriesCollection();
 
-        XYSeries series = new XYSeries("Czas działania");
-        XYSeries series2 = new XYSeries("Test");
+        XYSeries series = new XYSeries("SelectionSort");
+        XYSeries series2 = new XYSeries("QuickSort");
+        XYSeries series3 = new XYSeries("BubbleSort");
+        XYSeries series4 = new XYSeries("InsertionSortRecursive");
 
-        series.add(1, 4);
-        series.add(2, 10);
-        series.add(3, 12);
-        series.add(4, 15);
-        series.add(5, 12);
-        series.add(6, 20);
-        series.add(7, 23);
 
-        series2.add(5,16);
-        series2.add(1,18);
-        series2.add(9,19);
+        series.add(1, gui_pp.pass_data_selectionSort());
+        series.add(2, gui_pp.pass_data_selectionSort());
+        series.add(3, gui_pp.pass_data_selectionSort());
+        series.add(4, gui_pp.pass_data_selectionSort());
+        series.add(5, gui_pp.pass_data_selectionSort());
+        series.add(6, gui_pp.pass_data_selectionSort());
+        series.add(7, gui_pp.pass_data_selectionSort());
+
+        series2.add(1, gui_pp.quicksort_data());
+        series2.add(2, gui_pp.quicksort_data());
+        series2.add(3, gui_pp.quicksort_data());
+        series2.add(4, gui_pp.quicksort_data());
+        series2.add(5, gui_pp.quicksort_data());
+        series2.add(6, gui_pp.quicksort_data());
+        series2.add(7, gui_pp.quicksort_data());
+        
+        series3.add(1, gui_pp.pass_data_bubbleSort());
+        series3.add(2, gui_pp.pass_data_bubbleSort());
+        series3.add(3, gui_pp.pass_data_bubbleSort());
+        series3.add(4, gui_pp.pass_data_bubbleSort());
+        series3.add(5, gui_pp.pass_data_bubbleSort());
+        series3.add(6, gui_pp.pass_data_bubbleSort());
+        series3.add(7, gui_pp.pass_data_bubbleSort());
+        
+        series4.add(1, gui_pp.pass_data_InsertionSortRecursive());
+        series4.add(2, gui_pp.pass_data_InsertionSortRecursive());
+        series4.add(3, gui_pp.pass_data_InsertionSortRecursive());
+        series4.add(4, gui_pp.pass_data_InsertionSortRecursive());
+        series4.add(5, gui_pp.pass_data_InsertionSortRecursive());
+        series4.add(6, gui_pp.pass_data_InsertionSortRecursive());
+        series4.add(7, gui_pp.pass_data_InsertionSortRecursive());
 
         //Dodanie danych do wykresu
         dataset.addSeries(series);
         dataset.addSeries(series2);
-
-          return dataset;
+        dataset.addSeries(series3);
+        dataset.addSeries(series4); 
+        return dataset;
     }
 
     public static void main() {
         SwingUtilities.invokeLater(() -> {
-            wykres example = new wykres("Wykres");
+            wykres example = new wykres("Wykres sortowania");
             example.setSize(800, 400);
             example.setLocationRelativeTo(null);
             example.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
