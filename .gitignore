@@ -14,7 +14,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 *.zip
@@ -32,8 +31,5 @@ dist/
 nbdist/
 .nb-gradle/
 nbactions.xml
-
-### Java libs ###
-!libs/*
 
 # End of https://www.gitignore.io/api/java,netbeans
