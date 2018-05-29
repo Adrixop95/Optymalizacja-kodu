@@ -45,38 +45,21 @@ public class wykres extends JFrame {
         XYSeries series3 = new XYSeries("BubbleSort");
         XYSeries series4 = new XYSeries("InsertionSortRecursive");
 
-
-        series.add(1, gui_pp.pass_data_selectionSort());
-        series.add(2, gui_pp.pass_data_selectionSort());
-        series.add(3, gui_pp.pass_data_selectionSort());
-        series.add(4, gui_pp.pass_data_selectionSort());
-        series.add(5, gui_pp.pass_data_selectionSort());
-        series.add(6, gui_pp.pass_data_selectionSort());
-        series.add(7, gui_pp.pass_data_selectionSort());
-
-        series2.add(1, gui_pp.quicksort_data());
-        series2.add(2, gui_pp.quicksort_data());
-        series2.add(3, gui_pp.quicksort_data());
-        series2.add(4, gui_pp.quicksort_data());
-        series2.add(5, gui_pp.quicksort_data());
-        series2.add(6, gui_pp.quicksort_data());
-        series2.add(7, gui_pp.quicksort_data());
+        for (int i = 1; i < 11; i++){
+            series.add(i, gui_pp.pass_data_selectionSort());
+        }
         
-        series3.add(1, gui_pp.pass_data_bubbleSort());
-        series3.add(2, gui_pp.pass_data_bubbleSort());
-        series3.add(3, gui_pp.pass_data_bubbleSort());
-        series3.add(4, gui_pp.pass_data_bubbleSort());
-        series3.add(5, gui_pp.pass_data_bubbleSort());
-        series3.add(6, gui_pp.pass_data_bubbleSort());
-        series3.add(7, gui_pp.pass_data_bubbleSort());
+        for (int i = 1; i < 11; i++){
+            series2.add(i, gui_pp.quicksort_data());
+        }
+                
+        for (int i = 1; i < 11; i++){
+            series3.add(i, gui_pp.pass_data_bubbleSort());
+        }
         
-        series4.add(1, gui_pp.pass_data_InsertionSortRecursive());
-        series4.add(2, gui_pp.pass_data_InsertionSortRecursive());
-        series4.add(3, gui_pp.pass_data_InsertionSortRecursive());
-        series4.add(4, gui_pp.pass_data_InsertionSortRecursive());
-        series4.add(5, gui_pp.pass_data_InsertionSortRecursive());
-        series4.add(6, gui_pp.pass_data_InsertionSortRecursive());
-        series4.add(7, gui_pp.pass_data_InsertionSortRecursive());
+        for (int i = 1; i < 11; i++){
+            series4.add(i, gui_pp.pass_data_InsertionSortRecursive());
+        }
 
         //Dodanie danych do wykresu
         dataset.addSeries(series);

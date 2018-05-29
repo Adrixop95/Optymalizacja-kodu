@@ -43,32 +43,19 @@ public class wykres_p1 extends JFrame {
         XYSeries series6 = new XYSeries("O(nlogn)");
         XYSeries series7 = new XYSeries("O(n^2)");
         XYSeries series8 = new XYSeries("O(n^3)");
-
-        series6.add(1, gui_pp.p1_onlogn());
-        series6.add(2, gui_pp.p1_onlogn());
-        series6.add(3, gui_pp.p1_onlogn());
-        series6.add(4, gui_pp.p1_onlogn());
-        series6.add(5, gui_pp.p1_onlogn());
-        series6.add(6, gui_pp.p1_onlogn());
-        series6.add(7, gui_pp.p1_onlogn());
-                
-        series7.add(1, gui_pp.p1_on2());
-        series7.add(2, gui_pp.p1_on2());
-        series7.add(3, gui_pp.p1_on2());
-        series7.add(4, gui_pp.p1_on2());
-        series7.add(5, gui_pp.p1_on2());
-        series7.add(6, gui_pp.p1_on2());
-        series7.add(7, gui_pp.p1_on2());
         
-        series8.add(1, gui_pp.p1_on3());
-        series8.add(2, gui_pp.p1_on3());
-        series8.add(3, gui_pp.p1_on3());
-        series8.add(4, gui_pp.p1_on3());
-        series8.add(5, gui_pp.p1_on3());
-        series8.add(6, gui_pp.p1_on3());
-        series8.add(7, gui_pp.p1_on3());
-
-
+        for (int i = 1; i < 11; i++){
+            series6.add(i, gui_pp.p1_onlogn());
+        }
+        
+        for (int i = 1; i < 11; i++){
+            series7.add(i, gui_pp.p1_on2());
+        }
+        
+        for (int i = 1; i < 11; i++){
+            series8.add(i, gui_pp.p1_on3());
+        }
+        
         //Dodanie danych do wykresu
         dataset1.addSeries(series6);
         dataset1.addSeries(series7);
