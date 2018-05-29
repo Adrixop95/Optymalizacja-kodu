@@ -40,7 +40,7 @@ public class wykres_p1 extends JFrame {
     private XYDataset createDataset1() {
         XYSeriesCollection dataset1 = new XYSeriesCollection();
 
-        XYSeries series6 = new XYSeries("O(nlogn)");
+        XYSeries series6 = new XYSeries("O(n)");
         XYSeries series7 = new XYSeries("O(n^2)");
         XYSeries series8 = new XYSeries("O(n^3)");
         

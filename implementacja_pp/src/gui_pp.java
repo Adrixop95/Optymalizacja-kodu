@@ -111,7 +111,7 @@ public class gui_pp extends javax.swing.JFrame {
         jLabel6.setText("Wybierz rodzaj testów:");
         jLabel6.setPreferredSize(new java.awt.Dimension(183, 17));
 
-        alg_choose_p1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Wszystkie", "O(n3)+O(n2)", "O(n3)+O(nlogn)", "O(n2)+O(nlogn)", "Laczenie petli" }));
+        alg_choose_p1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Wszystkie", "O(n3)+O(n2)", "O(n3)+O(n)", "O(n2)+O(n)", "Laczenie petli" }));
         alg_choose_p1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alg_choose_p1ActionPerformed(evt);
@@ -663,12 +663,12 @@ public class gui_pp extends javax.swing.JFrame {
             petle.wyw_loops_On3(thirdArray);
             petle.wyw_loops_On2(seccondArray);
 
-        } else if ( lops == "O(n3)+O(nlogn)") {
+        } else if ( lops == "O(n3)+O(n)") {
 
             petle.wyw_loops_On3(thirdArray);
             petle.wyw_loops_On(firstArray);
 
-        } else if (lops == "O(n2)+O(nlogn)") {
+        } else if (lops == "O(n2)+O(n)") {
 
             petle.wyw_loops_On2(seccondArray);
             petle.wyw_loops_On(firstArray);

@@ -183,8 +183,8 @@
                   <StringArray count="5">
                     <StringItem index="0" value="Wszystkie"/>
                     <StringItem index="1" value="O(n3)+O(n2)"/>
-                    <StringItem index="2" value="O(n3)+O(nlogn)"/>
-                    <StringItem index="3" value="O(n2)+O(nlogn)"/>
+                    <StringItem index="2" value="O(n3)+O(n)"/>
+                    <StringItem index="3" value="O(n2)+O(n)"/>
                     <StringItem index="4" value="Laczenie petli"/>
                   </StringArray>
                 </Property>

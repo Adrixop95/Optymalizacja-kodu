@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class petle {
     
-    // Przykłady wpływu spłaszacznia pętli (złożoności obliczeniowe od O(nlogn), O(n^2), O(n^3) zależne od ilości pętli)
+    // Przykłady wpływu spłaszacznia pętli (złożoności obliczeniowe od O(n), O(n^2), O(n^3) zależne od ilości pętli)
     public static int[] loops_On(int[] data){
         for (int i=0; i<1000; i++){
             Arrays.sort(data);
@@ -113,7 +113,7 @@ public class petle {
         Instant start0 = Instant.now();
         loops_On(data);
         Instant end0 = Instant.now();  
-        System.out.println("\n Czas wykonania algorytmu o zlozonosci O(nlogn): " + Duration.between(start0, end0));
+        System.out.println("\n Czas wykonania algorytmu o zlozonosci O(n): " + Duration.between(start0, end0));
     }
     
 }
